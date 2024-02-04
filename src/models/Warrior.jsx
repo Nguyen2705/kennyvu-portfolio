@@ -3,7 +3,7 @@ import { useAnimations, useGLTF } from '@react-three/drei';
 
 import warriorScene from '../assets/3d/warrior.glb';
 
-const Warrior = ({ isRotating, ...props }) => {
+const Warrior = ({ isRotating, warriorScale, warriorPosition, ...props }) => {
   const ref = useRef();
   const { scene, animations } = useGLTF(warriorScene);
   const { actions } = useAnimations(animations, ref);
@@ -17,10 +17,10 @@ const Warrior = ({ isRotating, ...props }) => {
   }, [actions, isRotating])
   
   return (
-    <mesh {...props} ref={ref}>
+    <mesh {...props} ref={ref} scale={warriorScale} position={warriorPosition}>
         <primitive object={scene} />
     </mesh>
-  )
-}
+  );
+};
 
 export default Warrior

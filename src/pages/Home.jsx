@@ -17,14 +17,14 @@ const Home = () => {
 
   const adjustAltarForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -6.5, -43];
+    let screenPosition = [0, -7.5, -43];
     let rotation = [0.1, 4.7, 0];
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
 
     } else {
-      screenScale = [1, 1, 1];
+      screenScale = [3, 3, 3];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -37,8 +37,8 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0]
     } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [0, -4, -4]
+      screenScale = [0.5, 0.5, 0.5];
+      screenPosition = [0, -4, -300]
     }
 
     return [screenScale, screenPosition];
@@ -61,6 +61,7 @@ const Home = () => {
 
           <Eagle />
           <Sky isRotating={isRotating} />
+          
           <Altar 
             position={altarPosition}
             scale={altarScale}
