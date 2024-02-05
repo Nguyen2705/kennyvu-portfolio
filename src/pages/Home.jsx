@@ -17,14 +17,14 @@ const Home = () => {
 
   const adjustAltarForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -7.5, -43];
+    let screenPosition = [0, -50, -350];
     let rotation = [0.1, 4.7, 0];
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
 
     } else {
-      screenScale = [3, 3, 3];
+      screenScale = [26, 26, 26];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -37,8 +37,8 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0]
     } else {
-      screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, -4, -300]
+      screenScale = [0.4, 0.4, 0.4];
+      screenPosition = [0, -100, -150]
     }
 
     return [screenScale, screenPosition];

@@ -9,12 +9,14 @@ const Warrior = ({ isRotating, warriorScale, warriorPosition, ...props }) => {
   const { actions } = useAnimations(animations, ref);
 
   useEffect(() => {
-    if(isRotating) {
-        actions['run'].play();
+    if (isRotating) {
+      actions['run'].play();
+      actions['iddle'].stop();
     } else {
-        actions['run'].stop();
+      actions['run'].stop();
+      actions['iddle'].play();
     }
-  }, [actions, isRotating])
+  }, [actions, isRotating]);
   
   return (
     <mesh {...props} ref={ref} scale={warriorScale} position={warriorPosition}>
