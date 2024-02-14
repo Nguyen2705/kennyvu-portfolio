@@ -10,12 +10,12 @@ const Sky = ({ isRotating }) => {
 
   useFrame((_, delta) => {
     if(isRotating) {
-      skyRef.current.rotation.y += 0.35 * delta
+      skyRef.current.rotation.y -= 0.45 * delta
     }
   })
 
   return (
-    <mesh ref={skyRef} scale={[100, 100, 100]} position={[0, 0 ,-351]}>
+    <mesh ref={skyRef} scale={[100, 100, 100]} position={[0, -180 ,-351]}>
         <primitive object={sky.scene} />
     </mesh>
   )
